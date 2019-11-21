@@ -154,13 +154,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(BOOL)isWebContentResourceSecure: (NSURL*) targetURL
 {
-    NSURL *baseURL = [NSURL URLWithString:@"www" relativeToURL:[[NSBundle mainBundle] resourceURL]];
+    /*NSURL *baseURL = [NSURL URLWithString:@"www" relativeToURL:[[NSBundle mainBundle] resourceURL]];
     NSString *basePath = [baseURL absoluteString];
     NSString *targetPath = [[targetURL standardizedURL] absoluteString];
     
     return [targetPath hasPrefix:basePath] ||
            [targetPath hasPrefix:[[NSURL fileURLWithPath:
                                    [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]]  absoluteString]];
+   */
+   return true;
 }
 
 /*!
